@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import MainContainer from './navigation/MainContainer';
+import { useFonts } from 'expo-font';
+import Toast from 'react-native-toast-message';
 
-export default function App() {
+function App() {
+  const [fontsLoaded] = useFonts({
+    Azonix: require('./fonts/Azonix.otf'), // Adjust the path if necessary
+  });
+
+  if (!fontsLoaded) {
+    return null; // Or a loading spinner
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <MainContainer/>
+      <Toast/>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
