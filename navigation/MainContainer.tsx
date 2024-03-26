@@ -4,13 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Platform } from 'react-native';
 
-// Screens
 import HomeScreen from './screens/HomeScreen';
 import HomeScreenWeb from './screens/HomeScreen.web';
 import ReserveerScreen from './screens/ReserveerScreen';
 import ProfielScreen from './screens/ProfielScreen';
 
-// Screen names
 const homeName = "Home";
 const detailsName = "Reserveer";
 const settingsName = "Profiel";
